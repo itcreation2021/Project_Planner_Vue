@@ -5,7 +5,7 @@
             <h3 @click="showDetail = !showDetail"> {{ project.title }} </h3>
         </div>
         <div>
-            <span class="material-icons">
+            <span class="material-icons" @click="deleteProject">
                 delete
             </span>
             <span class="material-icons">
@@ -24,12 +24,17 @@
 export default {
     data() {
         return {
-            showDetail: false
+            showDetail: false,
+            api: "http://localhost:3000/projects/"
 
         }
     },
     methods: {
-       
+        deleteProject() {
+            let deleteRoute = this.api + this.project.id;
+            fetch(deleteRoute, { method: "DELETE" })
+            this.$emit("delete",this.project.id)
+        }
     },
     props: ['project']
 }
