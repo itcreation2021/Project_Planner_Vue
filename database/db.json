@@ -3,17 +3,32 @@
     {
       "id": 1,
       "title": "project title one",
-      "detail": "project detail One"
+      "detail": "project detail One",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "title": "project title Two",
+      "detail": "project detail Two",
+      "complete": false
     },
     {
       "id": 3,
       "title": "project title three",
-      "detail": "project detail Three"
+      "detail": "project detail Three",
+      "complete": true
     },
     {
-      "id": 4,
-      "title": "project title four",
-      "detail": "project detail four"
+      "title": "Testing",
+      "detail": "Testing Detail",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "title": "Testing",
+      "detail": "Testing Testing Two",
+      "complete": false,
+      "id": 5
     }
   ]
 }

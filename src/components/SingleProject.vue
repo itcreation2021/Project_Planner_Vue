@@ -1,22 +1,23 @@
 <template>
-<div class="project">
+<div class="project" :class="{complete:project.complete}">
     <div class="flexing">
         <div>
-            <h3 @click="showDetail = !showDetail"> {{ project.title }} </h3>
+            <h4 class="text-primary" @click="showDetail = !showDetail"> {{ project.title }} </h4>
         </div>
-        <div>
+        <div class="text-primary">
             <span class="material-icons" @click="deleteProject">
                 delete
             </span>
             <span class="material-icons">
                 edit
             </span>
-            <span class="material-icons">
+            <span class="material-icons" @click="completeProject">
                 done
             </span>
         </div>
     </div>
-    <p v-if="showDetail"> {{ project.detail }} </p>
+        <p> {{ project.complete }} </p>
+    <p class="text-black-50" v-if="showDetail"> {{ project.detail }} </p>
 </div>
 </template>
 
@@ -34,6 +35,26 @@ export default {
             let deleteRoute = this.api + this.project.id;
             fetch(deleteRoute, { method: "DELETE" })
             this.$emit("delete",this.project.id)
+        },
+        completeProject() {
+            let updateCompleteRoute = this.api + this.project.id;
+            fetch(updateCompleteRoute, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify(
+                    {
+                        complete:!this.project.complete
+                    }
+                )
+            })
+            .then(() => {
+                this.$emit("complete",this.project.id)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
         }
     },
     props: ['project']
@@ -48,8 +69,7 @@ export default {
     border-radius: 8px;
     border-left: 6px solid crimson;
 }
-h3{
-    color: indigo;
+h4{
     cursor: pointer;
 }
 .flexing{
@@ -63,5 +83,8 @@ span{
 span:hover{
     color:#777777;
     cursor: pointer;
+}
+.complete{
+    border-left-color: green;
 }
 </style>
