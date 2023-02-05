@@ -2,8 +2,8 @@
   "projects": [
     {
       "id": 1,
-      "title": "project title one",
-      "detail": "project detail One",
+      "title": "project title one update testing",
+      "detail": "project detail One Update Testing Testing",
       "complete": true
     },
     {
@@ -14,8 +14,8 @@
     },
     {
       "id": 3,
-      "title": "project title three",
-      "detail": "project detail Three",
+      "title": "project title three update",
+      "detail": "project detail Three Update",
       "complete": true
     },
     {
