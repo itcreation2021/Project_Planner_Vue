@@ -2,8 +2,8 @@
   "projects": [
     {
       "id": 1,
-      "title": "project title one update testing",
-      "detail": "project detail One Update Testing Testing",
+      "title": "Project Planner to Finish",
+      "detail": "Vue JS Project Chapter 8 Finish ",
       "complete": true
     },
     {

@@ -18,7 +18,6 @@
             </span>
         </div>
     </div>
-        <p> {{ project.complete }} </p>
     <p class="text-black-50" v-if="showDetail"> {{ project.detail }} </p>
 </div>
 </template>
